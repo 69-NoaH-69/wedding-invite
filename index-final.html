@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Janine & Nirantha's Wedding</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f6f7fb;
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1, h2, h3, p {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 1rem 0;
+    }
+
+    .highlight {
+      color: #4e6b94;
+    }
+
+    .invite-block {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95) url('Bakcdrop-02.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .verse {
+      font-style: italic;
+      color: #4e6b94;
+      font-size: 1.1rem;
+    }
+
+    .verse strong {
+      display: block;
+      margin-top: 0.2rem;
+      font-style: normal;
+    }
+
+    .dotted-line {
+      margin: 2rem 0 1rem;
+      border-top: 2px dotted #333;
+      width: 90%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-with-names {
+      width: 100%;
+      max-width: 500px;
+      height: 120px;
+      margin: 2rem auto;
+      position: relative;
+    }
+
+    .image-with-names img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .names-bar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.75);
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      color: #4e6b94;
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
+      border-radius: 6px;
+    }
+
+    .date-heading {
+      font-family: 'Salina-Trial', serif;
+      font-size: 2.4rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .section {
+      margin: 2rem 0;
+    }
+
+    .separator-line {
+      border-top: 0.1px solid #d3e5ff;
+      color: #3b5376;
+      margin: 2rem auto;
+      width: 90%;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #4e6b94;
+      margin-top: 2rem;
+    }
+
+    #countdown {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      color: #4e6b94;
+    }
+
+    .rsvp-form {
+      margin-top: 2rem;
+    }
+
+    .rsvp-form h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #4e6b94;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    button {
+      background-color: #4e6b94;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    button:hover {
+      background-color: #3b5376;
+    }
+  </style>
+</head>
+<body>
+  <div class="invite-block">
+    <p class="verse">“We love because God first loved us”<br><strong>— 1 John 4:19 —</strong></p>
+
+    <div class="section">
+      <p>Mr. & Mrs. Wilson together with Mr. & Mrs. Wijesekera<br>
+      joyfully request the presence of</p>
+      <h2 id="guest-name">Mr. & Mrs. / Ms.</h2>
+      <div class="dotted-line"></div>
+      <p>at the marriage of their children</p>
+    </div>
+
+    <div class="image-with-names">
+      <img src="Bakcdrop-02.jpg" alt="Backdrop">
+      <div class="names-bar">JANINE & NIRANTHA</div>
+    </div>
+
+    <h1 class="date-heading">11<sup>th</sup> Oct ‘25</h1>
+
+    <div class="section">
+      <p>3:45 PM onwards<br>
+      at St. Mary’s Church - Bambalapitiya</p>
+    </div>
+
+    <div class="section">
+      <p>Reception to follow<br>
+      at Hilton Colombo Residences (JAIC)<br>
+      from 6:30 PM onwards</p>
+    </div>
+
+    <div class="separator-line"></div>
+
+    <p class="quote">“Your love, laughter, and prayers are the only gifts we seek,<br> kindly no boxed gifts.”</p>
+
+    <div class="separator-line"></div>
+
+    <div id="countdown"></div>
+
+    <div class="rsvp-form">
+      <h3>RSVP</h3>
+      <form action="https://formsubmit.co/your@email.com" method="POST">
+        <input type="hidden" name="_subject" value="Wedding RSVP">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" id="hidden-name" name="name" value="">
+        <select name="attendance" required>
+          <option value="">Will you be attending?</option>
+          <option value="Yes">Yes, joyfully attending</option>
+          <option value="No">Sorry, unable to attend</option>
+        </select>
+        <textarea name="message" rows="3" placeholder="Any message or blessings..."></textarea>
+        <button type="submit">Send RSVP</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const guestCode = params.get("r");
+    const guestMap = {
+      f: "Mr. & Mrs. Fernando",
+      j: "Ms. Janaki",
+      s: "Mr. Silva",
+      k: "Mr. & Mrs. Kariyawasam"
+    };
+    const guest = guestMap[guestCode];
+    if (guest) {
+      document.getElementById("guest-name").textContent = guest;
+      document.getElementById("hidden-name").value = guest;
+    }
+
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("2025-10-11T15:45:00+05:30").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "We're getting married today! 💍";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `Countdown to our big day: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
